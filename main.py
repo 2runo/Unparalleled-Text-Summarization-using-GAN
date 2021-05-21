@@ -3,6 +3,8 @@ from seq2seq2seq import seq2seq2seq
 import tensorflow as tf
 from tensorflow.python import debug as tf_debug
 
+tf.config.experimental.set_visible_devices([tf.config.experimental.list_physical_devices('GPU')[1]], 'GPU')  # Use a second gpu
+
 def parse():
     parser = argparse.ArgumentParser(description="variational autoencoder")
     parser.add_argument('-model_dir', default='train_model',help='output model weight dir')
